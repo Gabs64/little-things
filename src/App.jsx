@@ -1301,7 +1301,6 @@ export default function App() {
       {screen === 'title' && (
         <section className="title-screen" id="title-screen" aria-label="Welcome Screen">
           <div className="title-badge">
-            <span className="dot" />
             <span>Cozy Adventure</span>
           </div>
 
