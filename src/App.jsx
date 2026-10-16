@@ -387,16 +387,16 @@ export default function App() {
       return;
     }
 
-    // Determine speed and punctuation pauses (brisk and natural)
-    let delay = 9;
+    // Determine speed and punctuation pauses (gentle, natural handwriting pace)
+    let delay = 13;
     if (writingProgress.charIndex < currentSection.text.length) {
       const char = currentSection.text[writingProgress.charIndex];
-      if (char === ',') delay = 40;
-      else if (char === '.' || char === '!' || char === '?' || char === '😁') delay = 75;
-      else if (char === ' ') delay = 12;
+      if (char === ',') delay = 60;
+      else if (char === '.' || char === '!' || char === '?' || char === '😁') delay = 110;
+      else if (char === ' ') delay = 16;
     } else {
       // Pause between paragraphs
-      delay = 110;
+      delay = 160;
     }
 
     const timer = setTimeout(() => {
@@ -406,7 +406,7 @@ export default function App() {
           charIndex: prev.charIndex + 1
         }));
 
-        if (writingProgress.charIndex % 10 === 0) {
+        if (writingProgress.charIndex % 8 === 0) {
           sfx.playWritingScratch();
         }
 
